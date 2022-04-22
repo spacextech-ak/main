@@ -1,0 +1,1 @@
+grep -lR "PRODUCTUS" c:/store | xargs sed -i 's/PRODUCTUS/PRODUCTS/g'
