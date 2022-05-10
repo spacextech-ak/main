@@ -36,7 +36,72 @@
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function() {
-            var itemClass;
+
+            featuredProduct = [{
+                "image": "sam-a71.jpg",
+                "name": "Samsung A71",
+                "price": "$350"
+            }, {
+                "image": "2.jpg",
+                "name": "Lightning to 3.5mm",
+                "price": "12$"
+            }, {
+                "image": "3.jpg",
+                "name": "UK to French plug adapter",
+                "price": "$2"
+            }, {
+                "image": "b4.jpg",
+                "name": "HIKVISION RAM 8GB DDR4 2666MHz",
+                "price": "$35"
+            }, {
+                "image": "5.jpg",
+                "name": "SeaGate 1TB HDD Portable Drive",
+                "price": "$72"
+            }, {
+                "image": "6.jpg",
+                "name": "Universal Plug Adapter",
+                "price": "$6"
+            }, {
+                "image": "13.jpg",
+                "name": "Gaming Keyboard TX30",
+                "price": "$35"
+            }, {
+                "image": "8.jpg",
+                "name": "PS5 DualSense Wireless Controller",
+                "price": "$90"
+            }, {
+                "image": "9.jpg",
+                "name": "USB to ETHERNET adapter",
+                "price": "$12"
+            }, {
+                "image": "10.jpg",
+                "name": "KotionEach Gaming Headphones",
+                "price": "$37"
+            }, {
+                "image": "11.jpg",
+                "name": "Sunpir Powerbank 10000mAh",
+                "price": "$18"
+            }, {
+                "image": "b1.jpg",
+                "name": "Netis wifi Repeater",
+                "price": "$18"
+            }, {
+                "image": "14.jpg",
+                "name": "Star Ink 1L",
+                "price": "$25"
+            }, {
+                "image": "15.jpg",
+                "name": "JBL Headphones",
+                "price": "$15"
+            }, {
+                "image": "invo-850.jpg",
+                "name": "UPS INVO 850VA",
+                "price": "$40"
+            }, {
+                "image": "17.jpg",
+                "name": "mini UPS for Router with POE",
+                "price": "$29"
+            }]
             mainCarousel = [
                 "cpu.png",
                 "tag_laptop_flip.jpeg",
@@ -49,22 +114,66 @@
                 "lenovo.png",
                 "cpu_2.jpg",
                 "iphone12.png",
+
                 "print.png"
             ]
+            var mainCarouselItemClass;
             $.each(mainCarousel, function(index, element) {
                 // var totalItems = $(".carousel-item").length;
                 if (index === 0) {
-                    itemClass = "item active";
+                    mainCarouselItemClass = "item active";
                 } else {
-                    itemClass = "item";
+                    mainCarouselItemClass = "item";
                 }
                 var thisImage = element;
                 $('#carousel_main').append(
-                    '<div class="' + itemClass + '">' +
+                    '<div class="' + mainCarouselItemClass + '">' +
                     '<img style="width:100%; height: 400px; object-fit:contain"  src="themes/images/carousel/' + thisImage + '"/>' +
                     '</div>'
                 );
             })
+            var thumbnails = "";
+            var count = 0;
+            var isFirstItem = true;
+            $.each(featuredProduct, function(index, element) {
+                // var totalItems = $(".carousel-item").length;
+                var object = element;
+                count++;
+                thumbnails += '<li class="span3">' +
+                    '<div class="thumbnail">' +
+                    '<a href="product_details.html"><img src="themes/images/products/' + object.image + '" alt=""></a>' +
+                    '<div class="caption">' +
+                    '<h5>' + object.name + '</h5>' +
+                    '<h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">' + object.price +
+                    '</span></h4>' +
+                    // '<img style="width:100%; height: 400px; object-fit:contain"  src="themes/images/carousel/' + thisImage + '"/>' +
+                    ' </div>' +
+                    '</div>' +
+                    '</li>';
+
+                if ((count % 4 == 0 || index == featuredProduct.length)) {
+                    var featuredProductItemClass;
+                    if (isFirstItem) {
+                        featuredProductItemClass = "item active";
+                    } else {
+                        featuredProductItemClass = "item";
+                    }
+                    $('#carousel_featured_products').append(
+                        '<div class="' + featuredProductItemClass + '">' +
+                        '<ul class="thumbnails">' +
+                        thumbnails +
+                        '</ul>' +
+                        '</div>'
+                    );
+                    count = 0;
+                    thumbnails = "";
+                    isFirstItem = false;
+                }
+
+
+
+            })
+
         });
     </script>
 </head>
@@ -172,9 +281,10 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%; height: 400px; max-height: 400px;background-color: white;">
             <div id="carousel_main" class="carousel-inner" style="width:100%; height: 400px;max-height: 400px;" />
         </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="top: 50% ;">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next" style="top: 50% ;">&rsaquo;</a>
     </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="top: 50% ;">&lsaquo;</a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next" style="top: 50% ;">&rsaquo;</a>
+
 
     </div>
     </div>
@@ -282,173 +392,9 @@
                         <h4>Featured Products <small class="pull-right">200+ featured products</small></h4>
 
                         <div class="row-fluid">
-                            <div id="featured" class="carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <ul class="thumbnails">
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <i class="tag"></i>
-                                                    <a href="product_details.html"><img src="themes/images/products/sam-a71.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Samsung A71</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$350</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <i class="tag"></i>
-                                                    <a href="product_details.html"><img src="themes/images/products/2.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Lightning to 3.5mm</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">12$</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/3.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>UK to French plug adapter</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$2</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <i class="tag"></i>
-                                                    <a href="product_details.html"><img src="themes/images/products/b4.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>HIKVISION RAM 8GB DDR4 2666MHz</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$35</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="item">
-                                        <ul class="thumbnails">
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <i class="tag"></i>
-                                                    <a href="product_details.html"><img src="themes/images/products/5.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>SeaGate 1TB HDD Portable Drive</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$72</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/6.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Universal Plug Adapter</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$6</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/13.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Gaming Keyboard TX30</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$35</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <i class="tag"></i>
-                                                    <a href="product_details.html"><img src="themes/images/products/8.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>PS5 DualSense Wireless Controller</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$90</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="item">
-                                        <ul class="thumbnails">
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/9.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>USB to ETHERNET adapter</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$12</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/10.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>KotionEach Gaming Headphones</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$37</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/11.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Sunpir Powerbank 10000mAh</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$18</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/b1.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Netis wifi Repeater</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$18</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="item">
-                                        <ul class="thumbnails">
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/14.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>Star Ink 1L</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$25</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/15.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>JBL Headphones</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$15</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/invo-850.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>UPS INVO 850VA</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$40</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="span3">
-                                                <div class="thumbnail">
-                                                    <a href="product_details.html"><img src="themes/images/products/17.jpg" alt=""></a>
-                                                    <div class="caption">
-                                                        <h5>mini UPS for Router with POE</h5>
-                                                        <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$29</span></h4>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                            <div id="featuredDivCarousel">
+                                <div id="featured" class="carousel slide">
+                                    <div id="carousel_featured_products" class="carousel-inner" />
                                 </div>
                                 <a class="left carousel-control" href="#featured" data-slide="prev" style="top: 50% ;">&lsaquo;</a>
                                 <a class="right carousel-control" href="#featured" data-slide="next" style="top: 50% ;">&rsaquo;</a>
@@ -693,6 +639,19 @@
 </div>
 -->
     <span id="themesBtn"></span>
+</body>
+
+
+</html>ef="themes/css/#" name="pattern17"><img src="themes/switch/images/pattern/pattern17.png" alt="bootstrap business templates"></a>
+<a href="themes/css/#" name="pattern18"><img src="themes/switch/images/pattern/pattern18.png" alt="bootstrap business templates"></a>
+<a href="themes/css/#" name="pattern19"><img src="themes/switch/images/pattern/pattern19.png" alt="bootstrap business templates"></a>
+<a href="themes/css/#" name="pattern20"><img src="themes/switch/images/pattern/pattern20.png" alt="bootstrap business templates"></a>
+
+</div>
+</div>
+</div>
+-->
+<span id="themesBtn"></span>
 </body>
 
 
