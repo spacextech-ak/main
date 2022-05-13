@@ -15,12 +15,133 @@
     <!-- Google-code-prettify -->
     <link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet" />
 
-    <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
     <style type="text/css" id="enject"></style>
 
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
         $(document).ready(function() {
+            sideMenu = [{
+                "section": "PCs and Desktops",
+                "subsection": [
+                    "APPLE products",
+                    "OTHERS BRANDS",
+                    "DESKTOPS",
+                    "COMPUTERS PARTS"
+                ]
+            }, {
+                "section": "PHONES",
+                "subsection": [
+                    "IPHONES",
+                    "SAMSUNG",
+                    "HUWAWEI",
+                    "NOKIA",
+                    "XIAOMI",
+                    "SONY",
+                    "SCREENS"
+                ]
+            }, {
+                "section": "PRINTERS AND TONERS",
+                "subsection": [
+                    "HP",
+                    "KONICA",
+                    "OTHER BRANDS",
+                    "TONERS AND INKs"
+                ]
+            }, {
+                "section": "ACCESSORIES",
+                "subsection": [
+                    "PLUG ADAPTERS",
+                    "HEADPHONES",
+                    "EARPHONES",
+                    "PHONE CABLES",
+                    "PHONE CHARGERS",
+                    "USB FLASH DRIVE",
+                    "HARD DRIVES",
+                    "LAPTOP CHARGER",
+                    "CARD READER",
+                    "CDs & DVDs",
+                    "WEBCAM",
+                    "UPS SYSTEMS",
+                    "SELFIE STICK",
+                    "POWER BANKS",
+                    "BAGS"
+                ]
+            }, {
+                "section": "PRINTING SUPPLIES",
+                "subsection": [
+                    "PAPER",
+                    "LIQUID, POWDER INK"
+                ]
+            }, {
+                "section": "NETWORKING",
+                "subsection": [
+                    "ROUTERS",
+                    "RANGE EXTENDERS",
+                    "SWITCHES",
+                    "NETWORK ADAPTERS",
+                    "NETWORK CABLES"
+                ]
+            }]
+            $.each(sideMenu, function(index, element) {
+                var subMenuOpen = '';
+                var displayStyleNone = ' style="display:none"';
+                if (index === 0) {
+                    subMenuOpen = ' open';
+                    displayStyleNone = '';
+                }
+                // apple.html
+                // printers-hp.html
+                // plug-adapters.html
+                var subMenu_li = "";
+                $.each(element.subsection, function(i, e) {
+                    var active_li = '';
+                    if (index === 0 && i == 0) {
+                        active_li = ' class="active" ';
+                    }
+                    subMenu_li += '<li>' + '<a' + active_li +
+                        // ' href="' + 'other-brands.html' + '"' +
+                        '>' +
+                        '<i class="icon-chevron-right"></i>' +
+                        e + '</a>' +
+                        '</li>';
+                })
+                $('#sideManu').append(
+                    '<li class="subMenu' + subMenuOpen + '">' +
+                    '<a>' + element.section + '</a>' +
+                    '<ul ' + displayStyleNone + '>' +
+                    subMenu_li +
+                    '</ul>' +
+                    '</li>'
+                );
+            })
+
+            mainCarousel = [
+                "cpu.png",
+                "tag_laptop_flip.jpeg",
+                "tag_laptop_flip_2.jpeg",
+                "iphone13.jpg",
+                "tag_phone_advanced.jpeg",
+                "tag_phone_plus.jpeg",
+                "tag_phone.jpeg",
+                "asus.png",
+                "lenovo.png",
+                "cpu_2.jpg",
+                "iphone12.png",
+                "print.png"
+            ];
+            $.each(mainCarousel, function(index, element) {
+                var itemClass;
+                if (index === 0) {
+                    itemClass = "item active";
+                } else {
+                    itemClass = "item";
+                }
+                $('#carousel_main').append(
+                    '<div class="' + itemClass + '">' +
+                    '<img style="width:100%; height: 400px; object-fit:contain"  src="themes/images/carousel/' + element + '"/>' +
+                    '</div>'
+                );
+            });
 
             featuredProduct = [{
                 "image": "sam-a71.jpg",
@@ -86,63 +207,32 @@
                 "image": "17.jpg",
                 "name": "mini UPS for Router with POE",
                 "price": "$29"
-            }]
-            mainCarousel = [
-                "cpu.png",
-                "tag_laptop_flip.jpeg",
-                "tag_laptop_flip_2.jpeg",
-                "iphone13.jpg",
-                "tag_phone_advanced.jpeg",
-                "tag_phone_plus.jpeg",
-                "tag_phone.jpeg",
-                "asus.png",
-                "lenovo.png",
-                "cpu_2.jpg",
-                "iphone12.png",
-                "print.png"
-            ]
-            var mainCarouselItemClass;
-            $.each(mainCarousel, function(index, element) {
-                if (index === 0) {
-                    mainCarouselItemClass = "item active";
-                } else {
-                    mainCarouselItemClass = "item";
-                }
-                var thisImage = element;
-                $('#carousel_main').append(
-                    '<div class="' + mainCarouselItemClass + '">' +
-                    '<img style="width:100%; height: 400px; object-fit:contain"  src="themes/images/carousel/' + thisImage + '"/>' +
-                    '</div>'
-                );
-            })
+            }];
             var thumbnails = "";
             var count = 0;
             var isFirstItem = true;
             document.getElementById("featured_count").innerHTML = featuredProduct.length + " featured products";
             $.each(featuredProduct, function(index, element) {
-                var object = element;
                 count++;
                 thumbnails += '<li class="span3">' +
                     '<div class="thumbnail">' +
                     // '<a href="product_details.html">' +
-                    '<img src="themes/images/products/' + object.image + '" alt=""></a>' +
+                    '<img src="themes/images/products/' + element.image + '" alt=""></a>' +
                     '<div class="caption">' +
-                    '<h5>' + object.name + '</h5>' +
-                    '<h4><a class="btn">VIEW</a> <span class="pull-right">' + object.price +
+                    '<h5>' + element.name + '</h5>' +
+                    '<h4><a class="btn">VIEW</a> <span class="pull-right">' + element.price +
                     '</span></h4>' +
                     ' </div>' +
                     '</div>' +
                     '</li>';
 
                 if ((count % 4 == 0 || index == featuredProduct.length)) {
-                    var featuredProductItemClass;
+                    var activeItem = 'item';
                     if (isFirstItem) {
-                        featuredProductItemClass = "item active";
-                    } else {
-                        featuredProductItemClass = "item";
+                        activeItem = 'item active';
                     }
                     $('#carousel_featured_products').append(
-                        '<div class="' + featuredProductItemClass + '">' +
+                        '<div class="' + activeItem + '">' +
                         '<ul class="thumbnails">' +
                         thumbnails +
                         '</ul>' +
@@ -152,7 +242,7 @@
                     thumbnails = "";
                     isFirstItem = false;
                 }
-            })
+            });
         });
     </script>
 </head>
@@ -180,16 +270,14 @@
                     <h5>CALL NOW</h5>
                     <h5 style="line-height:5px;">71 - 567036</h5>
                 </li>
-
                 </li>
             </ul>
-
         </div>
     </div>
 
     <div id="carouselBlk">
         <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%; height: 400px; max-height: 400px;background-color: white;">
-            <div id="carousel_main" class="carousel-inner" style="width:100%; height: 400px;max-height: 400px;" />
+            <div id="carousel_main" class="carousel-inner" style="width:100%; height: 400px;max-height: 400px;"></div>
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="top: 50% ;">&lsaquo;</a>
         <a class="right carousel-control" href="#myCarousel" data-slide="next" style="top: 50% ;">&rsaquo;</a>
@@ -201,70 +289,6 @@
             <div class="row">
                 <div id="sidebar" class="span3">
                     <ul id="sideManu" class="nav nav-tabs nav-stacked">
-                        <li class="subMenu open"><a> PCs and Desktops </a>
-                            <ul>
-                                <li><a class="active" href="apple.html"><i class="icon-chevron-right"></i>APPLE
-										products</a></li>
-                                <li><a href="other-brands.html"><i class="icon-chevron-right"></i>OTHERS BRANDS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>DESKTOPS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>COMPUTERS PARTS</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a> PHONES</a>
-                            <ul style="display:none">
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>IPHONES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SAMSUNG</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>HUWAWEI</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>NOKIA</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>XIAOMI</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SONY</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SCREENS</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>PRINTERS AND TONERS</a>
-                            <ul style="display:none">
-                                <li><a href="printers-hp.html"><i class="icon-chevron-right"></i>HP</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>KONICA</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>OTHER BRANDS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>TONERS AND INKs</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>ACCESSORIES</a>
-                            <ul style="display:none">
-                                <li><a href="plug-adapters.html"><i class="icon-chevron-right"></i>PLUG ADAPTERS </a>
-                                </li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>HEADPHONES </a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>EARPHONES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>PHONE CABLES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>PHONE CHARGERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>USB FLASH DRIVE</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>HARD DRIVES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>LAPTOP CHARGER</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>CARD READER</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>CDs & DVDs</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>WEBCAM</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>UPS SYSTEMS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SELFIE STICK</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>POWER BANKS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>BAGS</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>PRINTING SUPPLIES</a>
-                            <ul style="display:none">
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>PAPER </a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>LIQUID, POWDER INK</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>NETWORKING</a>
-                            <ul style="display:none">
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>ROUTERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>RANGE EXTENDERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SWITCHES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>NETWORK ADAPTERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>NETWORK CABLES</a></li>
-                            </ul>
-                        </li>
                     </ul>
                     <br />
                     <div class="thumbnail">
