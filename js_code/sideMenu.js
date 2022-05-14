@@ -68,9 +68,28 @@ $.each(sideMenu, function(index, element) {
         subMenuOpen = ' open';
         displayStyleNone = '';
     }
-    // apple.html
+    // Product Details: 
+    // ------------------------------------------
+    // product_details.html
+    // macbook-pro-2015.html
+    // hp-printer-m479fdw.html
+    // hp-printer-m404dn.html
+    // hp-printer-M283fdw.html
+    // hp-printer-M255dw.html
+    // hp-printer-m102w.html
+    // hp-printer-2130-3in1.html
+    // hp-printer-515.html
+    // ------------------------------------------
+    // List of Products:
+    // ------------------------------------------
+    // special_offer.html
+    // printers-hp-inkjet.html
+    // printers-hp-laserjet.html
+    // printers-hp-tank.html
+    // ------------------------------------------
+    // Shows printers sub categories: 
+    // ------------------------------------------
     // printers-hp.html
-    // plug-adapters.html
     var subMenu_li = "";
     $.each(element.subsection, function(i, e) {
         var active_li = '';
@@ -78,7 +97,7 @@ $.each(sideMenu, function(index, element) {
             active_li = ' class="active" ';
         }
         subMenu_li += '<li>' + '<a' + active_li +
-            // ' href="' + 'other-brands.html' + '"' +
+            // ' href="' + 'special_offer.html?type=' + e + '"' +
             '>' +
             '<i class="icon-chevron-right"></i>' +
             e + '</a>' +
