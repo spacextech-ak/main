@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js_code/sideMenu.js" type="text/javascript" defer></script>
+<script src="js_code/header_component.js" type="text/javascript" defer></script>
+<script src="js_code/footer_component.js" type="text/javascript" defer></script>
 
 <head>
     <meta charset="utf-8">
@@ -7,22 +11,12 @@
     <meta name="viewport" content="width=1024">
     <meta name="description" content="space x,  spacex, tech store, printers, cellphone,laptop,computers,lines,sim cards,hamra, hamra street">
     <meta name="author" content="space x technologies website, designed by fadi haddad 2020 with botstrap template">
-    <!--Less styles -->
-    <!-- Other Less css file //different less files has different color scheam
-	<link rel="stylesheet/less" type="text/css" href="themes/less/simplex.less">
-	<link rel="stylesheet/less" type="text/css" href="themes/less/classified.less">
-	<link rel="stylesheet/less" type="text/css" href="themes/less/amelia.less">  MOVE DOWN TO activate
-	-->
-    <!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
-	<script src="themes/js/less.js" type="text/javascript"></script> -->
 
-    <!-- Bootstrap style -->
+
     <link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen" />
     <link href="themes/css/base.css" rel="stylesheet" media="screen" />
-    <!-- Bootstrap style responsive -->
     <link href="themes/css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="themes/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <!-- Google-code-prettify -->
     <link href="themes/js/google-code-prettify/prettify.css" rel="stylesheet" />
 
 
@@ -31,170 +25,15 @@
 </head>
 
 <body>
-    <!--
-<div id="header">
-<div class="container">
-<div id="welcomeLine" class="row">
-	<div class="span6">Welcome!<strong> User</strong></div>
-	<div class="span6">
-	<div class="pull-right">
-		<a href="product_summary.html"><span class="">Fr</span></a>
-		<a href="product_summary.html"><span class="">Es</span></a>
-		<span class="btn btn-mini">En</span>
-		<a href="product_summary.html"><span>&pound;</span></a>
-		<span class="btn btn-mini">$155.00</span>
-		<a href="product_summary.html"><span class="">$</span></a>
-		<a href="product_summary.html"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes in your cart </span> </a> 
-	</div>
-	</div>
-</div>
--->
-    <!-- Navbar ================================================== -->
-    <div id="logoArea" class="navbar">
-        <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </a>
-        <div class="navbar-inner">
-            <a class="brand" style="width: 280px; height: 57px;" href="index.html"><img src="themes/img/spacex-logo.png" style="margin:-8px;" alt="Bootsshop" /></a>
-            <form class="form-inline navbar-search" method="post" action="products.html">
-                <!-- <input id="srchFld" class="srchTxt" type="text" />   -->
-                <!--	 <select class="srchTxt">
-			<option>ITEMS </option>
-			<option>CLOTHES </option>
-			<option>FOOD AND BEVERAGES </option>
-			<option>HEALTH & BEAUTY </option>
-			<option>SPORTS & LEISURE </option>
-			<option>BOOKS & ENTERTAINMENTS </option>
-		</select> 
-		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
-	-->
 
-                <div class="dropdown">
-                    <button class="dropbtn">Shop Now <i class="fa fa-caret-down"></i> </button>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-
-            </form>
-            <ul id="topMenu" class="nav pull-right">
-                <li class="" style="padding-right:15px;"><a href="special_offer.html">Special Offers</a></li>
-                <li class="" style="padding-right:15px;"><a href="services.html">Services</a></li>
-                <li class="" style="padding-right:15px;"><a href="contact.html">About Us</a></li>
-                <li style="padding-right:10px;">
-                    <a href="http://wa.me/+96171567036" target="_blank"><img src="themes/img/whatsapp-icon.png" height="30px" width="30px" style="margin: auto;"></a>
-                </li>
-                <li style="display: inline-block; color: white; padding-top:5px">
-                    <h5>CALL NOW</h5>
-                    <h5 style="line-height:5px;">71 - 567036</h5>
-                </li>
-                <!--
-	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3>Login Block</h3>
-		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="Email">
-			  </div>
-			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="Password">
-			  </div>
-			  <div class="control-group">
-				<label class="checkbox">
-				<input type="checkbox"> Remember me
-				</label>
-			  </div>
-			</form>		
-			<button type="submit" class="btn btn-success">Sign in</button>
-			<button  data-dismiss="modal" aria-hidden="true">Close</button>
-		  </div>
-	</div>
--->
-                </li>
-            </ul>
-
-        </div>
+    <div id="header_component">
     </div>
-    </div>
-    <!-- Header End====================================================================== -->
     <div id="mainBody">
         <div class="container">
             <div class="row">
 
-                <!-- Sidebar ================================================== -->
                 <div id="sidebar" class="span3">
-                    <ul id="sideManu" class="nav nav-tabs nav-stacked">
-                        <li class="subMenu open"><a> PCs and Desktops </a>
-                            <ul style="display:none">
-                                <li><a href="apple.html"><i class="icon-chevron-right"></i>APPLE PRODUCTS</a></li>
-                                <li><a href="other-brands.html"><i class="icon-chevron-right"></i>OTHERS BRANDS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>DESKTOPS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>COMPUTERS PARTS</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a> PHONES</a>
-                            <ul style="display:none">
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>IPHONES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SAMSUNG</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>HUWAWEI</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>NOKIA</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>XIAOMI</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SONY</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SCREENS</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu open"><a>PRINTERS AND TONERS</a>
-                            <ul>
-                                <li><a class="active" href="products.html"><i class="icon-chevron-right"></i>HP</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>KONICA</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>OTHER BRANDS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>TONERS AND INKs</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>ACCESSORIES</a>
-                            <ul style="display:none">
-                                <li><a href="plug-adapters.html"><i class="icon-chevron-right"></i>PLUG ADAPTERS </a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>HEADPHONES </a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>EARPHONES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>PHONE CABLES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>PHONE CHARGERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>USB FLASH DRIVE</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>HARD DRIVES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>LAPTOP CHARGER</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>CARD READER</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>CDs & DVDs</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>WEBCAM</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>UPS SYSTEMS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SELFIE STICK</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>POWER BANKS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>BAGS</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>PRINTING SUPPLIES</a>
-                            <ul style="display:none">
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>PAPER </a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>LIQUID, POWDER INK</a></li>
-                            </ul>
-                        </li>
-                        <li class="subMenu"><a>NETWORKING</a>
-                            <ul style="display:none">
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>ROUTERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>RANGE EXTENDERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>SWITCHES</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>NETWORK ADAPTERS</a></li>
-                                <li><a href="products.html"><i class="icon-chevron-right"></i>NETWORK CABLES</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                     <br/>
-                    <!-- side items -->
                     <div class="thumbnail">
                         <img src="themes/images/products/refurbished.jpg" alt="refurbished macbook" />
                         <div class="caption">
@@ -211,14 +50,8 @@
                                 <a href="product_details.html"> </a> <a class="btn btn-primary" href="#">$70</a></h4>
                         </div>
                     </div><br/>
-                    <!-- <div class="thumbnail">
-			<img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
-			<div class="caption">
-			  <h5>Payment Methods</h5>
-			</div>
-		  </div> -->
+
                 </div>
-                <!-- Sidebar end=============================================== -->
                 <div class="span9">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home</a> <span class="divider">/</span></li>
@@ -235,192 +68,17 @@
                     <hr class="soft" />
                     <form class="form-horizontal span6">
                         <div class="control-group">
-                            <!--
-		  <label class="control-label alignL">Sort By </label>
-			<select>
-              <option>Priduct name A - Z</option>
-              <option>Priduct name Z - A</option>
-              <option>Priduct Stoke</option>
-              <option>Price Lowest first</option>
-			</select>
-		-->
+
                         </div>
                     </form>
-                    <!--
-	<div id="myTab" class="pull-right">
-	 <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
-	 <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
-	</div>
--->
+
                     <br class="clr" />
                     <div class="tab-content">
-                        <!--
-	<div class="tab-pane" id="listView">
-		<div class="row">	  
-			<div class="span2">
-			<img src="themes/images/products/b1.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>New | Available</h3>				
-				<hr class="soft"/>
-				<h5>Product Name </h5>
-				<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-			<h3> $110</h3>
-			<label class="checkbox">
-				<input type="checkbox">  Adds product to compair
-			</label><br/>
-			  <a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-			  <a href="product_details.html" class="btn btn-large"></a>
-				</form>
-			</div>
-	</div>
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/b2.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>New | Available</h3>				
-				<hr class="soft"/>
-				<h5>Product Name </h5>
-				<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-				<h3> $110</h3>
-				<label class="checkbox">
-				<input type="checkbox">  Adds product to compair
-				</label><br/>
-				<a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.html" class="btn btn-large"></a>
-			</form>
-			</div>
-	</div>
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/b3.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>New | Available</h3>				
-				<hr class="soft"/>
-				<h5>Product Name </h5>
-				<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-			<h3> $110</h3>
-			<label class="checkbox">
-			<input type="checkbox">  Adds product to compair
-			</label><br/>
-			  <a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-			  <a href="product_details.html" class="btn btn-large"></a>
-			</form>
-			</div>
-	</div>
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/b4.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>New | Available</h3>				
-				<hr class="soft"/>
-				<h5>Product Name </h5>
-				<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> $110</h3>
-				<label class="checkbox">
-				<input type="checkbox">  Adds product to compair
-				</label><br/>
-				<a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.html" class="btn btn-large"></a>
-				</form>
-			</div>
-	</div>
-	
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/6.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>New | Available</h3>				
-				<hr class="soft"/>
-				<h5>Product Name </h5>
-				<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> $222.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  Adds product to compair
-				</label><br/>
-				<a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.html" class="btn btn-large"></a>
-				</form>
-			</div>
-	</div>
-	<hr class="soft"/>
-		<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/7.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>New | Available</h3>				
-				<hr class="soft"/>
-				<h5>Product Name </h5>
-				<p>
-				
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.html">View Details</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> $222.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  Adds product to compair
-				</label><br/>
-				<a href="product_details.html" class="btn btn-large btn-primary"> Add to <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.html" class="btn btn-large"></a>
-				</form>
-			</div>
-		</div>
-	<hr class="soft"/>
-	</div>
--->
+
                         <div class="tab-pane  active" id="blockView">
                             <ul class="thumbnails">
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <!-- <i class="sale"></i> -->
                                         <a href="hp-printer-m479fdw.html"><img class="zoom" src="themes/images/printers-pics/hp/laserjet/main/M479fdw.png" alt="" /></a>
                                         <div class="caption">
                                             <h5>HP <u>Color</u> LaserJet Pro MFP M479fdw</h5>
@@ -434,7 +92,6 @@
                                 </li>
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <!-- <i class="sale"></i> -->
                                         <a href="hp-printer-M283fdw.html"><img class="zoom" src="themes/images/printers-pics/hp/laserjet/main/M283fdw.png" alt="" /></a>
                                         <div class="caption">
                                             <h5>HP <u>Color</u> LaserJet Pro MFP M283fdw</h5>
@@ -448,7 +105,6 @@
                                 </li>
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <!-- <i class="sale"></i> -->
                                         <a href="hp-printer-m404dn.html"><img class="zoom" src="themes/images/printers-pics/hp/laserjet/main/M404dn.png" alt="" /></a>
                                         <div class="caption">
                                             <h5>HP LaserJet Pro M404dn (B/W) Printer.</h5>
@@ -462,7 +118,6 @@
                                 </li>
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <!-- <i class="sale"></i> -->
                                         <a href="hp-printer-M255dw.html"><img class="zoom" src="themes/images/printers-pics/hp/laserjet/main/M255DW.png" alt="" /></a>
                                         <div class="caption">
                                             <h5>HP LaserJet Pro M255WD <u>(B/W) </u> wireless Printer</h5>
@@ -476,7 +131,6 @@
                                 </li>
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <!-- <i class="sale"></i> -->
                                         <a href="hp-printer-m102w.html"><img class="zoom" src="themes/images/printers-pics/hp/laserjet/main/M102w.png" alt="" /></a>
                                         <div class="caption">
                                             <h5>HP Laserjet <u>(B/W)</u> M102W Wireless Printer </h5>
@@ -487,21 +141,6 @@
                                         </div>
                                     </div>
                                 </li>
-                                <!--
-			<li class="span3">
-			  <div class="thumbnail">
-				<!-- <i class="sale"></i>
-				<a href="product_details.html"><img src="themes/images/products/new-1.png" alt=""/></a>
-				<div class="caption">
-				  <h5>item code</h5>
-				  <p> 
-					item description. 
-				  </p>
-				  <h4 style="text-align:center"><a  href="product_details.html"> </a> <!-- <a  href="#">Add to <i class="icon-shopping-cart"></i></a> </h4>
-				</div>
-			  </div>
-			</li>
-		-->
 
                             </ul>
 
@@ -510,61 +149,16 @@
                         </div>
                     </div>
 
-                    <!-- <a href="compair.html" class="btn btn-large pull-right">Compair Product</a> -->
-                    <!--
-	<div  style="padding-left: 175px;" class="pagination">
-		<ul> 
-		<li><a href="#">&lsaquo;</a></li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">...</a></li>
-		<li><a href="#">&rsaquo;</a></li>
-		</ul>
-	</div>
--->
+
                     <br class="clr" />
                 </div>
             </div>
         </div>
     </div>
-    <!-- MainBody End ============================= -->
-    <!-- Footer ================================================================== -->
+
+
     <div id="footerSection">
-        <div class="container">
-            <div class="row">
-                <div class="span3">
-                    <h5>USEFUL LINKS</h5>
-                    <a style="font-size: 13px;" href="special_offer.html">SPECIAL OFFERS</a>
-                    <a style="font-size: 13px;" href="login.html">SERVICES</a>
-                    <a style="font-size: 13px;" href="login.html">ABOUT US</a>
-                    <a style="font-size: 13px;" href="login.html">LOCATION</a>
-                </div>
-                <div class="span3">
-                    <h5>INFORMATION</h5>
-                    <P>Al-Hamra , Abd-Alaziz Street
-                        <BR> Abd-Alaziz building 108,Ground Floor
-                        <BR> Beirut, Lebanon<br> PHONE : <a style="display: inline; font-size: 15px;" href="http://wa.me/09671567036" target="_blank">+961 71567036</a> <br> EMAIL : spacextechno@gmail.com
-                    </P>
-                </div>
-                <div class="span3">
-                    <h5>ABOUT DESIGNER</h5>
-                    <p style="font-size: 15px;"> Website was designed by Fadi Haddad<br> for Space X Technology, you can contact the developer on this number<br><br>
-                        <a style="font-size: 14px;" href="http://wa.me/09681951577" target="_blank">+961-81951577</a></p>
-                    <a href="http://wa.me/096171567036" target="_blank" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-                </div>
-                <div id="socialMedia" class="span3 pull-right">
-                    <h5>SOCIAL MEDIA </h5>
-                    <a href="https://www.facebook.com/AKGROUP4BUISNESS/"><img width="60" height="60" src="themes/images/Facebook-icon.png" title="facebook" alt="facebook" /></a>
-                    <a href="https://wa.me/096171567036"><img width="60" height="60" src="themes/images/whatsapp.png" title="whatsapp" alt="whatsapp" /></a>
-                    <a href="https://instagram.com/spacexbeirut?igshid=191mpi7dcpluz"><img width="60" height="60" src="themes/images/Instagram.png" title="instagram" alt="instagram" /></a>
-                </div>
-            </div>
-        </div>
-        <!-- Container End -->
     </div>
-    <!-- Placed at the end of the document so the pages load faster ============================================= -->
     <script src="themes/js/jquery.js" type="text/javascript"></script>
     <script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="themes/js/google-code-prettify/prettify.js"></script>
@@ -572,61 +166,6 @@
     <script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
 
-    <!-- Themes switcher section ============================================================================================= 
-<div id="secectionBox">
-<link rel="stylesheet" href="themes/switch/themeswitch.css" type="text/css" media="screen" />
-<script src="themes/switch/theamswitcher.js" type="text/javascript" charset="utf-8"></script>
-	<div id="themeContainer">
-	<div id="hideme" class="themeTitle">Style Selector</div>
-	<div class="themeName">Oregional Skin</div>
-	<div class="images style">
-	<a href="themes/css/#" name="bootshop"><img src="themes/switch/images/clr/bootshop.png" alt="bootstrap business templates" class="active"></a>
-	<a href="themes/css/#" name="businessltd"><img src="themes/switch/images/clr/businessltd.png" alt="bootstrap business templates" class="active"></a>
-	</div>
-	<div class="themeName">Bootswatch Skins (11)</div>
-	<div class="images style">
-		<a href="themes/css/#" name="amelia" title="Amelia"><img src="themes/switch/images/clr/amelia.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="spruce" title="Spruce"><img src="themes/switch/images/clr/spruce.png" alt="bootstrap business templates" ></a>
-		<a href="themes/css/#" name="superhero" title="Superhero"><img src="themes/switch/images/clr/superhero.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="cyborg"><img src="themes/switch/images/clr/cyborg.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="cerulean"><img src="themes/switch/images/clr/cerulean.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="journal"><img src="themes/switch/images/clr/journal.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="readable"><img src="themes/switch/images/clr/readable.png" alt="bootstrap business templates"></a>	
-		<a href="themes/css/#" name="simplex"><img src="themes/switch/images/clr/simplex.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="slate"><img src="themes/switch/images/clr/slate.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="spacelab"><img src="themes/switch/images/clr/spacelab.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="united"><img src="themes/switch/images/clr/united.png" alt="bootstrap business templates"></a>
-		<p style="margin:0;line-height:normal;margin-left:-10px;display:none;"><small>These are just examples and you can build your own color scheme in the backend.</small></p>
-	</div>
-	<div class="themeName">Background Patterns </div>
-	<div class="images patterns">
-		<a href="themes/css/#" name="pattern1"><img src="themes/switch/images/pattern/pattern1.png" alt="bootstrap business templates" class="active"></a>
-		<a href="themes/css/#" name="pattern2"><img src="themes/switch/images/pattern/pattern2.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern3"><img src="themes/switch/images/pattern/pattern3.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern4"><img src="themes/switch/images/pattern/pattern4.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern5"><img src="themes/switch/images/pattern/pattern5.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern6"><img src="themes/switch/images/pattern/pattern6.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern7"><img src="themes/switch/images/pattern/pattern7.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern8"><img src="themes/switch/images/pattern/pattern8.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern9"><img src="themes/switch/images/pattern/pattern9.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern10"><img src="themes/switch/images/pattern/pattern10.png" alt="bootstrap business templates"></a>
-		
-		<a href="themes/css/#" name="pattern11"><img src="themes/switch/images/pattern/pattern11.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern12"><img src="themes/switch/images/pattern/pattern12.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern13"><img src="themes/switch/images/pattern/pattern13.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern14"><img src="themes/switch/images/pattern/pattern14.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern15"><img src="themes/switch/images/pattern/pattern15.png" alt="bootstrap business templates"></a>
-		
-		<a href="themes/css/#" name="pattern16"><img src="themes/switch/images/pattern/pattern16.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern17"><img src="themes/switch/images/pattern/pattern17.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern18"><img src="themes/switch/images/pattern/pattern18.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern19"><img src="themes/switch/images/pattern/pattern19.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern20"><img src="themes/switch/images/pattern/pattern20.png" alt="bootstrap business templates"></a>
-		 
-	</div>
-	</div>
-</div>
--->
     <span id="themesBtn"></span>
 </body>
 
